@@ -1,40 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 🧠 AI-Powered Recipe Generator
 
-## Getting Started
+A modern, full-stack **AI Recipe Generator** app where users can log in via magic link, generate delicious recipes using AI, and view/download results — all powered by Supabase, MongoDB, and n8n.
 
-First, run the development server:
+> 🚀 **Live Demo:** [nexium-fatima-recipe-generator.vercel.app](https://nexium-fatima-recipe-generator.vercel.app/)
+
+---
+
+## ✨ Preview
+
+**🖼️ Pic 1: Home Page**
+  
+![](images/r-1.PNG)
+
+---
+
+**🖼️ Pic 2: Ingredient Input Page**
+
+![](images/r-2.PNG)
+
+---
+
+**🖼️ Pic 3: Generated Recipe Script**
+
+![](images/r-3.PNG)
+
+---
+
+**🖼️ Pic 4: Displaying the Recipe in Detail**
+
+![](images/r-4.PNG)
+
+---
+
+**🖼️ Pic 5: Listen to AI-generated Recipe **
+
+![](images/r-5.PNG)
+
+---
+
+## 🧩 Features
+
+- 🔐 **Magic Link Auth** via Supabase
+- 📝 **Recipe Script Generation** powered by LLM (via n8n + OpenRouter)
+- 💾 **MongoDB + Supabase** for dual persistence
+- 🎯 Deployed on **Vercel** with automatic CI/CD
+- ⚡ Fast, responsive, and clean UI
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer         | Technology               |
+|---------------|---------------------------|
+| **Frontend**  | Vercel, Next.js/React     |
+| **Auth**      | Supabase Magic Link       |
+| **Backend**   | n8n (AI generation logic), gTTS, Python Flask (or FastAPI) |
+| **Database**  | Supabase PostgreSQL + MongoDB |
+| **AI API**    | OpenRouter / OpenAI       |
+| **CI/CD**     | Vercel                    |
+
+---
+
+## 🚀 Getting Started (Local Development)
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/your-username/recipe-generator.git
+cd recipe-generator
+```
+2. Install Dependencies
+
+```
+npm install  # or yarn
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Environment Variables
+Create a .env file and add:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+SUPABASE_URL=your_supabase_url
+SUPABASE_ANON_KEY=your_supabase_anon_key
+OPENROUTER_API_KEY=your_openrouter_key
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+4. Run the Development Server
+```
+npm run dev
+Open http://localhost:3000 in your browser.
+```
+🧪 How It Works
+User logs in via Supabase magic link.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+User enters a topic like "Quick Vegan Dinner".
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Frontend sends request to backend API (Python or n8n).
 
-## Learn More
+n8n orchestrates an LLM request to generate a recipe script.
 
-To learn more about Next.js, take a look at the following resources:
+Script is parsed and synthesized into audio via gTTS.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+Both text and audio are stored and served via MongoDB and Supabase.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+User can read, listen, or download the result.
 
-## Deploy on Vercel
+📄 License
+MIT — Feel free to use, fork, and contribute!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+🙋‍♀️ Built with ❤️ by Fatima Rana
