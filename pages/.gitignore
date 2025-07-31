@@ -1,0 +1,37 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+
+# Build output
+.next/
+out/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDEs/editors
+.vscode/
+.idea/
+
+# Dependencies lock file (optional, choose one)
+# If you use npm:
+# yarn.lock
+# If you use yarn:
+# package-lock.json
+
+# Supabase generated files (if any local functions/schema):
+supabase/.temp/
+supabase/.output/
